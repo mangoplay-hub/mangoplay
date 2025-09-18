@@ -1,0 +1,698 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MangoPlay — 平台比較｜Stake · 1xBet · Bitcasino · Binance · Bybit · OKX · MAX · BitoPro</title>
+  <meta name="description" content="MangoPlay｜合規、專業的博弈與交易所比較。Stake、1xBet、Bitcasino 與 Binance、Bybit、OKX、MAX、BitoPro 比較。18+ 合法地區。">
+  <style>
+    :root{
+      --bg:#0b1220; --card:#0f1724; --muted:#9fb0d1; --accent:#ffd166; --primary:#7aa2ff;
+      --pill:#152033; --line:#182133; --success:#61d7a4; --danger:#ff7b8a;
+      --glass: rgba(255,255,255,0.03);
+      --max-width:1100px;
+      font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#07101b,#0b1220);color:#eaf2ff;font-family:var(--font-sans);line-height:1.6}
+    a{color:inherit}
+    .wrap{max-width:var(--max-width);margin:0 auto;padding:20px}
+    header{
+        position:sticky;
+        top:0;
+        background:rgba(4,9,16,0.45);
+        backdrop-filter:blur(6px);
+        border-bottom:1px solid var(--line);
+        z-index:20;
+    }
+    .header-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      max-width:var(--max-width);
+      margin:0 auto;
+      padding:12px 20px;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+    .logo-circle{
+      width:40px;
+      height:40px;
+      border-radius:8px;
+      background:linear-gradient(135deg,#ffd166,#ff9a66);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:700;
+      color:#07101b
+    }
+    .logo{width:100%;height:100%;object-fit:contain;border-radius:8px}
+    .brand h1{margin:0;font-size:1rem}
+    nav{display:flex;gap:8px;align-items:center}
+    nav a{padding:.45rem .7rem;border-radius:8px;background:var(--pill);border:1px solid var(--line);text-decoration:none;color:var(--muted);font-weight:600}
+    .lang-switch{display:flex;gap:6px}
+    .lang-switch button{background:transparent;border:1px solid var(--line);padding:.35rem .6rem;border-radius:8px;color:var(--muted);cursor:pointer}
+    .hero{padding:28px 0;text-align:center}
+
+    /* New styles for the large logo */
+    .hero-logo-container {
+      margin-bottom: 20px; /* Adjust as needed */
+    }
+    .hero-logo-circle {
+      width: 200px; /* Larger size */
+      height: 200px; /* Larger size */
+      border-radius: 30px; /* Slightly larger border-radius */
+      background: linear-gradient(135deg,#ffd166,#ff9a66);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto; /* Center the logo */
+      box-shadow: 0 8px 30px rgba(0,0,0,0.3); /* Subtle shadow for depth */
+    }
+    .hero-logo {
+      width: 90%; /* Adjust size within the circle */
+      height: 90%;
+      object-fit: contain;
+      border-radius: 24px;
+    }
+
+
+    .hero h2{margin:1rem 0;font-size:1.6rem}
+    .hero p{color:var(--muted);max-width:78ch;margin:0.6rem auto}
+    .disclosure{margin:12px auto 0;background:rgba(17,33,51,0.45);border:1px dashed #234;padding:10px;border-radius:10px;color:#bfe6ff;max-width:78ch}
+    h3 { margin-bottom: 0.5rem; }
+
+    /* cards grid */
+    .cards{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      padding:16px;
+      border-radius:12px;
+      display:flex;
+      flex-direction:column;
+    }
+    .card .logo{
+      height: 80px;
+      width: 80px;
+      object-fit: contain;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      background: white;
+      padding: 8px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+    .pill{
+        background:var(--pill);
+        padding:.25rem .5rem;
+        border-radius:999px;
+        color:var(--muted);
+        font-size:.86rem;
+        border:1px solid var(--line);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .proscons{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin:8px 0;
+      flex:1;
+    }
+    .proscons ul{margin:0;padding-left:18px}
+    .cta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:auto;
+    }
+    .cta a {
+      flex: 1;
+    }
+    .btn-primary{background:var(--primary);color:#07101b;padding:.6rem .9rem;border-radius:8px;text-decoration:none;font-weight:700}
+    .btn-ghost{background:transparent;border:1px solid var(--line);padding:.55rem .8rem;border-radius:8px;color:var(--muted);text-decoration:none}
+
+    /* responsive compare table */
+    .table-wrap{margin-top:20px;overflow:auto;border-radius:12px;border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)}
+    table{width:100%;border-collapse:collapse;min-width:760px}
+    th,td{padding:12px 10px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.02)}
+    th{background:rgba(0,0,0,0.2);position:sticky;top:0;font-weight:700;cursor:pointer}
+    tr:hover td{background:rgba(255,255,255,0.01)}
+
+    /* Tab styles */
+    .tab-buttons {
+        display: flex;
+        gap: 10px;
+        margin-top: 15px;
+        margin-bottom: 20px;
+    }
+    .tab-button {
+        padding: 8px 16px;
+        border-radius: 8px;
+        background: var(--pill);
+        border: 1px solid var(--line);
+        color: var(--muted);
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+    }
+    .tab-button:hover {
+        background-color: var(--line);
+    }
+    .tab-button.active {
+        background: var(--primary);
+        color: #07101b;
+        border-color: var(--primary);
+    }
+    .hidden {
+      display: none;
+    }
+
+    /* Scroll to top button */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--primary);
+      color: #07101b;
+      border: none;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 10;
+    }
+    .scroll-to-top.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    footer{margin-top:28px;padding:18px 0;text-align:center;color:var(--muted);font-size:.9rem;border-top:1px solid rgba(255,255,255,0.02)}
+    /* age gate */
+    .agegate{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.66);z-index:50}
+    .agebox{background:linear-gradient(180deg,#071827,#0f1f33);padding:20px;border-radius:12px;border:1px solid var(--line);width:92%;max-width:520px;text-align:center}
+    .agebox p{color:var(--muted)}
+    .age-actions{display:flex;gap:10px;justify-content:center;margin-top:12px}
+
+    /* 針對1xBet LOGO設定特定背景色 */
+    .card-1xbet .logo {
+      background: #004d80;
+    }
+
+    @media (max-width:880px){
+      .proscons{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <div class="logo-circle">
+          <img class="logo" src="images/MangoPlay_Logo.png" alt="MangoPlay logo">
+        </div>
+        <div>
+          <h1>MangoPlay</h1>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:-8px;">合規比較 · 合法地區 18+</div>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html" id="nav-home">首頁</a>
+        <a href="slots.html" id="nav-slots">🎰 老虎機</a>
+        <a href="#compare" id="nav-compare">比較表</a>
+        <div class="lang-switch" style="margin-left:8px">
+          <button id="lang-zh">中文</button>
+          <button id="lang-en">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-logo-container">
+        <div class="hero-logo-circle">
+          <img class="hero-logo" src="images/MangoPlay_Logo.png" alt="MangoPlay logo">
+        </div>
+      </div>
+
+      <h2 id="heroTitle">MangoPlay — 你的娛樂與加密資產比較指南</h2>
+      <p id="heroSub">提供專業且中立的比較：博弈平台與交易所的支付方式、提款速度、老虎機豐富度與合規風險。僅供參考，請於合法地區、年滿 18 歲後使用。</p>
+      <div class="disclosure" id="disclosure">免責聲明：本站含推薦連結（affiliate）。你使用連結註冊或消費，我們可能獲得佣金，但不會增加你的費用。</div>
+    </section>
+
+    <section style="margin-top:18px">
+      <h3 id="platformsTitle">熱門平台（快速比較）</h3>
+      <div class="cards" id="platformCards">
+
+        <article class="card" data-key="stake">
+          <img class="logo" src="images/Stake_logo.svg" alt="Stake logo" loading="lazy">
+          <h3>Stake</h3>
+          <div class="badges"><span class="pill">Crypto-first</span><span class="pill">Live Betting</span><span class="pill">Low Margin</span></div>
+          <div class="proscons">
+            <div>
+              <strong>優點</strong>
+              <ul>
+                <li>體育投注與老虎機並重</li>
+                <li>快速加密存提款</li>
+                <li>即時/直播玩法豐富</li>
+                <li>社群互動活躍</li>
+                <li>手機/APP 體驗佳</li>
+              </ul>
+            </div>
+            <div>
+              <strong>缺點</strong>
+              <ul>
+                <li>出入金方式較單一</li>
+                <li>主要偏向熟悉加密的玩家</li>
+                <li>不同地區功能可能受限</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cta">
+            <a class="btn-primary" href="https://stake.com/?c=qfX9sEvV" target="_blank" rel="nofollow sponsored noopener">前往 Stake</a>
+            <a class="btn-ghost" href="#compare" data-tab="casino">詳情比較</a>
+          </div>
+        </article>
+
+        <article class="card card-1xbet" data-key="1xbet">
+          <img class="logo" src="images/1xBet_logo.png" alt="1xBet logo" loading="lazy">
+          <h3>1xBet</h3>
+          <div class="badges"><span class="pill">多元支付</span><span class="pill">比賽市場多</span><span class="pill">贊助多</span></div>
+          <div class="proscons">
+            <div>
+              <strong>優點</strong>
+              <ul>
+                <li>體育投注盤口選擇多樣</li>
+                <li>覆蓋主流與小眾賽事</li>
+                <li>支援信用卡/行動支付/加密</li>
+                <li>贊助與品牌曝光度高</li>
+              </ul>
+            </div>
+            <div>
+              <strong>缺點</strong>
+              <ul>
+                <li>部分地區合規需注意</li>
+                <li>介面資訊豐富，新手需適應</li>
+                <li>提款速度較不穩定</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cta">
+            <a class="btn-primary" href="https://1xlite-90853.bar/mobile?bf=66c9a9842cbc9_4266623167" target="_blank" rel="nofollow sponsored noopener">前往 1xBet</a>
+            <a class="btn-ghost" href="#compare" data-tab="casino">詳情比較</a>
+          </div>
+        </article>
+
+        <article class="card" data-key="bitcasino">
+          <img class="logo" src="images/bitcasino_logo.png" alt="Bitcasino logo" loading="lazy">
+          <h3>Bitcasino</h3>
+          <div class="badges"><span class="pill">Slots 豐富</span><span class="pill">Crypto</span><span class="pill">VIP 程式</span></div>
+          <div class="proscons">
+            <div>
+              <strong>優點</strong>
+              <ul>
+                <li>提供大量老虎機與供應商</li>
+                <li>遊戲活動與等級制度完善</li>
+                <li>手機體驗良好</li>
+                <li>支援即時對話客服</li>
+              </ul>
+            </div>
+            <div>
+              <strong>缺點</strong>
+              <ul>
+                <li>體育盤口相對較少</li>
+                <li>合規依地區差異</li>
+                <li>部分地區需 VPN</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cta">
+            <a class="btn-primary" href="https://bitcasino.io/ref/N3OU17QPTYCO" target="_blank" rel="nofollow sponsored noopener">前往 Bitcasino</a>
+            <a class="btn-ghost" href="#compare" data-tab="casino">詳情比較</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section style="margin-top:20px">
+      <h3 id="exchangesTitle">熱門交易所（快速）</h3>
+      <div class="cards" style="margin-top:12px">
+        <article class="card">
+          <img class="logo" src="images/Binance_Logo.png" alt="Binance logo">
+          <h3>Binance</h3>
+          <div class="badges"><span class="pill">幣種多</span><span class="pill">工具齊全</span></div>
+          <div class="proscons">
+            <div>
+              <strong>優點</strong>
+              <ul>
+                <li>交易量全球第一</li>
+                <li>流動性與產品線強</li>
+                <li>幣種選擇豐富</li>
+              </ul>
+            </div>
+            <div>
+              <strong>缺點</strong>
+              <ul>
+                <li>介面複雜，新手入門難</li>
+                <li>各地監管政策差異，功能可能受限</li>
+                <li>手續費結構複雜</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cta">
+            <a class="btn-primary" href="https://www.binance.com/referral/earn-together/refer-in-hotsummer/claim?hl=zh-TC&ref=GRO_20338_IEOC0&utm_source=default" target="_blank" rel="nofollow sponsored noopener">前往 Binance</a>
+            <a class="btn-ghost" href="#compare" data-tab="exchange">詳情比較</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="logo" src="images/Bybit_logo.png" alt="Bybit">
+          <h3>Bybit</h3>
+          <div class="badges"><span class="pill">衍生品</span><span class="pill">活動多</span></div>
+          <div class="proscons">
+            <div>
+              <strong>優點</strong>
+              <ul>
+                <li>下單工具豐富</li>
+                <li>衍生品交易體驗佳</li>
+                <li>活動與獎勵頻繁</li>
+              </ul>
+            </div>
+            <div>
+              <strong>缺點</strong>
+              <ul>
+                <li>主要以衍生品為主</li>
+                <li>高槓桿風險</li>
+                <li>新手入門門檻高</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cta">
+            <a class="btn-primary" href="https://www.bybit.com/invite?ref=G5M40R" target="_blank" rel="nofollow sponsored noopener">前往 Bybit</a>
+            <a class="btn-ghost" href="#compare" data-tab="exchange">詳情比較</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="logo" src="images/okx_logo.svg" alt="OKX">
+          <h3>OKX</h3>
+          <div class="badges"><span class="pill">策略工具</span></div>
+          <div class="proscons">
+            <div>
+              <strong>優點</strong>
+              <ul>
+                <li>Web3 生態與工具豐富</li>
+                <li>介面簡潔易用</li>
+                <li>跟單工具成熟</li>
+              </ul>
+            </div>
+            <div>
+              <strong>缺點</strong>
+              <ul>
+                <li>功能依地區而異</li>
+                <li>品牌形象不如其他龍頭</li>
+                <li>交易深度較弱</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cta">
+            <a class="btn-primary" href="https://okx.com/join/5666558" target="_blank" rel="nofollow sponsored noopener">前往 OKX</a>
+            <a class="btn-ghost" href="#compare" data-tab="exchange">詳情比較</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="logo" src="images/MAX_logo.png" alt="MAX">
+          <h3>MAX（台灣）</h3>
+          <div class="badges"><span class="pill">法幣入金</span></div>
+          <div class="proscons">
+            <div>
+              <strong>優點</strong>
+              <ul>
+                <li>新台幣出入金最方便</li>
+                <li>具備在地化服務</li>
+                <li>合規且安全</li>
+              </ul>
+            </div>
+            <div>
+              <strong>缺點</strong>
+              <ul>
+                <li>幣種選擇較少</li>
+                <li>交易深度較低</li>
+                <li>掛單簿流動性不足</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cta">
+            <a class="btn-primary" href="https://max.maicoin.com/signup?r=9d96bb6a" target="_blank" rel="nofollow sponsored noopener">前往 MAX</a>
+            <a class="btn-ghost" href="#compare" data-tab="exchange">詳情比較</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <img class="logo" src="images/Bitopro_Logo.png" alt="BitoPro">
+          <h3>BitoPro（台灣）</h3>
+          <div class="badges"><span class="pill">本地品牌</span></div>
+          <div class="proscons">
+            <div>
+              <strong>優點</strong>
+              <ul>
+                <li>台幣出入金簡便</li>
+                <li>法遵與監管嚴格</li>
+                <li>適合新手入門</li>
+              </ul>
+            </div>
+            <div>
+              <strong>缺點</strong>
+              <ul>
+                <li>交易深度不及大所</li>
+                <li>幣種選擇少</li>
+                <li>功能較簡單</li>
+              </ul>
+            </div>
+          </div>
+          <div class="cta">
+            <a class="btn-primary" href="https://www.bitopro.com/users/sign_up?referrer=8420222362" target="_blank" rel="nofollow sponsored noopener">前往 BitoPro</a>
+            <a class="btn-ghost" href="#compare" data-tab="exchange">詳情比較</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="compare" style="margin-top:20px">
+      <h3>詳細比較</h3>
+      <div class="tab-buttons">
+        <a class="tab-button active" id="btn-casino">娛樂場比較</a>
+        <a class="tab-button" id="btn-exchange">交易所比較</a>
+      </div>
+
+      <div class="table-wrap" style="margin-top:10px" id="casinoTable">
+        <table id="cmp-casino">
+          <thead>
+            <tr>
+              <th>平台 / 交易所</th>
+              <th>支付方式</th>
+              <th>特色</th>
+              <th>老虎機</th>
+              <th>提款速度</th>
+              <th>加密友好</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="https://stake.com/?c=qfX9sEvV" target="_blank" rel="nofollow sponsored noopener">Stake</a></td><td>加密</td><td>直播/低邊際</td><td>多</td><td>快</td><td>是</td></tr>
+            <tr><td><a href="https://1xlite-90853.bar/mobile?bf=66c9a9842cbc9_4266623167" target="_blank" rel="nofollow sponsored noopener">1xBet</a></td><td>卡/行動/加密</td><td>市場覆蓋廣</td><td>多</td><td>中～快</td><td>部分</td></tr>
+            <tr><td><a href="https://bitcasino.io/ref/N3OU17QPTYCO" target="_blank" rel="nofollow sponsored noopener">Bitcasino</a></td><td>加密</td><td>娛樂城導向</td><td>非常多</td><td>中～快</td><td>是</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="table-wrap hidden" style="margin-top:10px" id="exchangeTable">
+        <table id="cmp-exchange">
+          <thead>
+            <tr>
+              <th>平台 / 交易所</th>
+              <th>支付方式</th>
+              <th>特色</th>
+              <th>老虎機</th>
+              <th>提款速度</th>
+              <th>加密友好</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="https://www.binance.com/referral/earn-together/refer-in-hotsummer/claim?hl=zh-TC&ref=GRO_20338_IEOC0&utm_source=default" target="_blank" rel="nofollow sponsored noopener">Binance</a></td><td>多</td><td>產品齊</td><td>—</td><td>快</td><td>是</td></tr>
+            <tr><td><a href="https://www.bybit.com/invite?ref=G5M40R" target="_blank" rel="nofollow sponsored noopener">Bybit</a></td><td>部分法幣/加密</td><td>合約優</td><td>—</td><td>快</td><td>是</td></tr>
+            <tr><td><a href="https://okx.com/join/5666558" target="_blank" rel="nofollow sponsored noopener">OKX</a></td><td>多</td><td>工具豐富</td><td>—</td><td>快</td><td>是</td></tr>
+            <tr><td><a href="https://max.maicoin.com/signup?r=9d96bb6a" target="_blank" rel="nofollow sponsored noopener">MAX</a></td><td>新台幣</td><td>在地化</td><td>—</td><td>中</td><td>部分</td></tr>
+            <tr><td><a href="https://www.bitopro.com/users/sign_up?referrer=8420222362" target="_blank" rel="nofollow sponsored noopener">BitoPro</a></td><td>新台幣</td><td>法遵/本地</td><td>—</td><td>中</td><td>部分</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+<footer>
+  © <span id="year"></span> MangoPlay ｜ 本站僅供資訊參考 · 非招攬 · 18+ 合法地區<br>
+  合作邀約聯絡：<a href="mailto:1xbetallenwang@gmail.com">1xbetallenwang@gmail.com</a>
+</footer>
+  </main>
+
+  <button id="scrollToTopBtn" class="scroll-to-top" aria-label="回到頂部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <div id="agegate" class="agegate" aria-hidden="false">
+    <div class="agebox" role="dialog" aria-modal="true">
+      <h3>年齡限制 / Age Gate</h3>
+      <p>本網站內容僅供 18 歲以上且所在地允許線上博弈者參考。若你未達法定年齡或所在地不允許，請離開本頁。</p>
+      <div class="age-actions">
+        <button id="age-ok" class="btn-primary">我已年滿 18 歲</button>
+        <a href="https://www.google.com" class="btn-ghost" rel="nofollow noopener">離開</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // age gate
+    const agegate = document.getElementById('agegate');
+    if(localStorage.getItem('mango_age_ok')==='1'){ agegate.style.display='none'; }
+    document.getElementById('age-ok').addEventListener('click', ()=>{
+      localStorage.setItem('mango_age_ok','1'); agegate.style.display='none';
+    });
+
+    // language
+    const translations = {
+      zh: {
+        navHome: '首頁', navSlots: '🎰 老虎機', navCompare: '比較表',
+        heroTitle: 'MangoPlay — 你的娛樂與加密資產比較指南',
+        heroSub: '提供專業且中立的比較：博弈平台與交易所的支付方式、提款速度、老虎機豐富度與合規風險。僅供參考，請於合法地區、年滿 18 歲後使用。',
+        platformsTitle: '熱門平台（快速比較）',
+        exchangesTitle: '熱門交易所（快速）'
+      },
+      en: {
+        navHome: 'Home', navSlots: '🎰 Slots', navCompare: 'Compare',
+        heroTitle: 'MangoPlay — Your entertainment & crypto exchange guide',
+        heroSub: 'Objective comparisons of betting platforms and exchanges: payments, withdrawals, slots availability and compliance. For reference only — use in legal jurisdictions aged 18+.',
+        platformsTitle: 'Popular Platforms (Quick Pick)',
+        exchangesTitle: 'Popular Exchanges (Quick Pick)'
+      }
+    };
+    function applyLang(l){
+      localStorage.setItem('mango_lang', l);
+      document.getElementById('nav-home').textContent = translations[l].navHome;
+      document.getElementById('nav-slots').textContent = translations[l].navSlots;
+      document.getElementById('nav-compare').textContent = translations[l].navCompare;
+      document.getElementById('heroTitle').textContent = translations[l].heroTitle;
+      document.getElementById('heroSub').textContent = translations[l].heroSub;
+      document.getElementById('platformsTitle').textContent = translations[l].platformsTitle;
+      document.getElementById('exchangesTitle').textContent = translations[l].exchangesTitle;
+    }
+    document.getElementById('lang-zh').addEventListener('click', ()=>applyLang('zh'));
+    document.getElementById('lang-en').addEventListener('click', ()=>applyLang('en'));
+    // init language
+    applyLang(localStorage.getItem('mango_lang') || 'zh');
+
+    // Tab switch logic
+    const casinoBtn = document.getElementById('btn-casino');
+    const exchangeBtn = document.getElementById('btn-exchange');
+    const casinoTable = document.getElementById('casinoTable');
+    const exchangeTable = document.getElementById('exchangeTable');
+
+    const switchTab = (tabId) => {
+        if (tabId === 'casino') {
+            casinoTable.classList.remove('hidden');
+            exchangeTable.classList.add('hidden');
+            casinoBtn.classList.add('active');
+            exchangeBtn.classList.remove('active');
+        } else if (tabId === 'exchange') {
+            exchangeTable.classList.remove('hidden');
+            casinoTable.classList.add('hidden');
+            exchangeBtn.classList.add('active');
+            casinoBtn.classList.remove('active');
+        }
+    };
+
+    casinoBtn.addEventListener('click', () => switchTab('casino'));
+    exchangeBtn.addEventListener('click', () => switchTab('exchange'));
+
+    // Listen for "詳情比較" button clicks
+    document.querySelectorAll('.btn-ghost[data-tab]').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const tabToSwitch = event.currentTarget.getAttribute('data-tab');
+            switchTab(tabToSwitch);
+            // Smooth scroll to the compare section
+            document.getElementById('compare').scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // table sort basic (updated for two tables)
+    function addSortListeners(tableId) {
+      const table = document.getElementById(tableId);
+      if(!table) return;
+      const ths = table.tHead.rows[0].cells;
+      Array.from(ths).forEach((th, idx)=>{
+        th.addEventListener('click', ()=>{
+          const tbody = table.tBodies[0];
+          const rows = Array.from(tbody.rows);
+          const asc = th.dataset.asc !== 'true';
+          rows.sort((a,b)=>{
+            const A = a.cells[idx].innerText.trim().toLowerCase();
+            const B = b.cells[idx].innerText.toLowerCase();
+            return (A.localeCompare(B, undefined, {numeric:true}) * (asc?1:-1));
+          });
+          rows.forEach(r=>tbody.appendChild(r));
+          Array.from(ths).forEach(h=>h.removeAttribute('data-asc'));
+          th.dataset.asc = asc;
+        });
+      });
+    }
+
+    addSortListeners('cmp-casino');
+    addSortListeners('cmp-exchange');
+    
+    // Scroll to top button logic
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
