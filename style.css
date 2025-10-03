@@ -190,13 +190,16 @@ h3 { margin-bottom: 0.5rem; }
 .cta a {
   flex: 1;
 }
-.btn-primary{
+/* 通用按鈕樣式 */
+.btn, .btn-primary{
   background:var(--primary);
   color:#071024;
   padding:.6rem .9rem;
   border-radius:8px;
   text-decoration:none;
-  font-weight:700
+  font-weight:700;
+  display:inline-block; /* 確保可以設定寬高或 flex 屬性 */
+  text-align:center;
 }
 .btn-ghost{
   background:transparent;
@@ -204,7 +207,8 @@ h3 { margin-bottom: 0.5rem; }
   padding:.55rem .8rem;
   border-radius:8px;
   color:var(--muted);
-  text-decoration:none
+  text-decoration:none;
+  display:inline-block;
 }
 .card-1xbet .logo {
   background: #004d80;
@@ -285,7 +289,7 @@ tr:hover td{background:rgba(255,255,255,0.01)}
 }
 
 
-/* Footer & Age Gate */
+/* Footer */
 footer{
   margin-top:28px;
   padding:18px 0;
@@ -294,6 +298,7 @@ footer{
   font-size:.9rem;
   border-top:1px solid rgba(255,255,255,0.02)
 }
+/* Age Gate (如果保留的話) */
 .agegate{
   position:fixed;
   inset:0;
@@ -319,7 +324,7 @@ footer{
 /* --- 教學頁面 (Guide Pages) 特定樣式 --- */
 .content-box {
   max-width: 850px;
-  margin: 28px auto;
+  margin: 28px auto; /* 確保內容區塊置中 */
   background: var(--card);
   border: 1px solid var(--line);
   padding: 30px;
@@ -351,8 +356,42 @@ footer{
     align-items: center;
     justify-content: center;
 }
+/* ****** 影片容器 置中 修正 ****** */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 比例 */
+    margin-bottom: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    /* 核心置中修正 */
+    max-width: 850px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* ****** CTA 區塊 置中 修正 ****** */
+.cta-box {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(90deg, #152033, #0f1724);
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  margin-top: 40px;
+  /* 核心置中修正 */
+  max-width: 850px; 
+  margin-left: auto;
+  margin-right: auto;
+}
 
-/* ****** 圖片優化：限制圖片寬度並居中 (解決手機圖片過大問題) ****** */
+/* 圖片優化：限制圖片寬度並居中 (手機排版的重要修正) */
 .guide-step img {
     max-width: 100%;
     height: auto;
@@ -388,15 +427,9 @@ footer{
     margin-bottom: 10px;
 }
 .btn-guide {
-    background: var(--primary);
-    color: #071024;
-    padding: 10px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
+    /* 沿用通用的 .btn 樣式 */
     margin-top: auto;
     display: block;
-    text-align: center;
 }
 
 /* --- SLOT 頁面特定樣式 (新增或修正) --- */
@@ -418,7 +451,7 @@ footer{
 .slot-thumb{
     width:100%;
     height:140px;
-    object-fit:contain; /* 讓圖片完整顯示 */
+    object-fit:contain; 
     border-radius:10px;
     border:1px solid rgba(255,255,255,0.03);
     margin-bottom:8px;
@@ -427,14 +460,8 @@ footer{
 .slot-card h3{margin:0 0 .4rem}
 .meta{color:var(--muted);font-size:.92rem;flex:1;margin-bottom:12px}
 
-/* 使用 .btn class (在 slot.html 中是這樣命名) */
+/* 使用 .btn class */
 .slot-card .btn{
-    background:var(--primary);
-    color:#021024;
-    padding:.6rem .9rem;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:700;
     margin-top:auto;
     display:inline-block;
     text-align:center;
@@ -474,18 +501,25 @@ footer{
     .guide-grid {
         display: flex; /* 教學頁面卡片也改為垂直排列 */
         flex-direction: column;
+        gap: 20px;
     }
     /* 確保 SLOT 卡片在手機上也垂直排列 */
     .slot-grid {
         display: flex;
         flex-direction: column;
-        gap: 20px; /* 增加間距與其他卡片一致 */
+        gap: 20px; 
     }
 
 
     /* 讓卡片本身在手機上撐滿整個寬度 */
-    .card, .slot-card, .guide-card { /* 確保所有卡片都撐滿 */
+    .card, .slot-card, .guide-card, .content-box, .video-container, .cta-box { 
         width: 100%;
+        max-width: none; /* 移除最大寬度限制 */
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .content-box {
+        padding: 20px 15px; /* 調整內邊距 */
     }
 
     /* 讓按鈕在手機上可以垂直排列 */
