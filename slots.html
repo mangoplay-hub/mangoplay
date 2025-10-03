@@ -1,514 +1,200 @@
-:root{
-  --bg:#0b1220; 
-  --card:#0f1724; 
-  --muted:#9fb0d1; 
-  --accent:#ffd166; 
-  --primary:#7aa2ff;
-  --pill:#152033; 
-  --line:#182133; 
-  --success:#61d7a4; 
-  --danger:#ff7b8a;
-  --glass: rgba(255,255,255,0.03);
-  --max-width:1100px;
-  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Helvetica Neue", Arial;
-}
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <title>MangoPlay | 🎰 老虎機遊戲推薦與高RTP比較</title>
 
-/* Base Styles */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  background:linear-gradient(180deg,#07101b,#0b1220);
-  color:#eaf2ff;
-  font-family:var(--font-sans);
-  line-height:1.6
-}
-a{color:inherit}
-.wrap{max-width:var(--max-width);margin:0 auto;padding:20px}
+  <link rel="icon" type="image/png" href="favicon.png"> 
+  <link rel="apple-touch-icon" href="favicon.png"> 
 
-/* Header & Navigation */
-header{
-  position:sticky;
-  top:0;
-  background:rgba(4,9,16,0.45);
-  backdrop-filter:blur(6px);
-  border-bottom:1px solid var(--line);
-  z-index:20
-}
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  max-width:var(--max-width);
-  margin:0 auto;
-  padding:12px 20px
-}
-.brand{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-.logo-circle{
-  width:60px;
-  height:60px;
-  border-radius:10px;
-  background:linear-gradient(135deg,#ffd166,#ff9a66);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-weight:700;
-  color:#071024;
-}
-.logo{
-  width:100%;
-  height:100%;
-  object-fit:contain;
-  border-radius:8px
-}
-.brand h1{margin:0;font-size:1.05rem}
-nav{display:flex;gap:8px;align-items:center}
-nav a{
-  padding:.45rem .7rem;
-  border-radius:8px;
-  background:var(--pill);
-  border:1px solid var(--line);
-  text-decoration:none;
-  color:var(--muted);
-  font-weight:600
-}
-nav a:hover{background:var(--line)}
-nav a.active {
-    background: var(--primary);
-    color: #071024;
-    border-color: var(--primary);
-}
+  <meta name="google-site-verification" content="6oH3VpKvJ0s3hi4J4I4TyZv7vtKix5rCxuGFclNjQmg" />
 
-.lang-switch{display:flex;gap:6px}
-.lang-switch button{
-  background:transparent;
-  border:1px solid var(--line);
-  padding:.35rem .6rem;
-  border-radius:8px;
-  color:var(--muted);
-  cursor:pointer
-}
-.lang-switch button:hover{background:var(--line)}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-C2JFTDVDPQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-/* Hero & Disclosure */
-.hero{padding:28px 0;text-align:center}
+  gtag('config', 'G-C2JFTDVDPQ');
+</script>
 
-/* Large Logo for Hero Section */
-.hero-logo-container {
-  margin-bottom: 20px;
-}
-.hero-logo-circle {
-  width: 200px;
-  height: 200px;
-  border-radius: 30px;
-  background: linear-gradient(135deg,#ffd166,#ff9a66);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-}
-.hero-logo {
-  width: 90%;
-  height: 90%;
-  object-fit: contain;
-  border-radius: 24px;
-}
+  <meta name="description" content="精選 Stake, Bitcasino 上的高 RTP 老虎機遊戲推薦。詳細介紹 Sweet Bonanza、Gates of Olympus 等遊戲特性、試玩連結與大獎攻略。">
+  
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="brand" style="text-decoration: none; color: inherit;">
+        <div class="logo-circle">
+          <img class="logo" src="images/MangoPlay_Logo.png" alt="MangoPlay logo">
+        </div>
+        <div>
+          <h1>MangoPlay</h1>
+          <div style="color:var(--muted);font-size:.85rem;margin-top:-8px;">合規比較 · 合法地區 18+</div>
+        </div>
+      </a>
+      <nav>
+        <a href="index.html" id="nav-home">首頁</a>
+        <a href="slots.html" id="nav-slots" class="active">🎰 老虎機</a> 
+        <a href="guide.html" id="nav-guide">📖 教學專區</a> 
+        <a href="index.html#compare" id="nav-compare">比較表</a> <div class="lang-switch" style="margin-left:8px">
+          <button id="lang-zh">中文</button>
+          <button id="lang-en">EN</button>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-.hero h2{margin:1rem 0;font-size:1.6rem}
-.hero p{color:var(--muted);max-width:78ch;margin:0.6rem auto}
-.disclosure{
-  margin:12px auto 0;
-  background:rgba(17,33,51,0.45);
-  border:1px dashed #234;
-  padding:10px;
-  border-radius:10px;
-  color:#bfe6ff;
-  max-width:78ch
-}
-h3 { margin-bottom: 0.5rem; }
+  <main class="wrap">
+    <section class="hero">
+      <h2 id="title">🎰 MangoPlay — 精選老虎機推薦</h2>
+      <p id="subtitle" style="color:var(--muted);max-width:72ch;margin:.6rem auto">每款卡片包含：遊戲類型、RTP（理論回饋率）、波動度說明與前往遊玩按鈕（連結會導到你選擇的平台）。請於合法地區且 18+ 使用。</p>
+    </section>
 
-/* Cards Grid (Index & Slots Page) */
-.cards{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-  margin-top: 20px;
-}
-.card{
-  background:var(--card);
-  border:1px solid var(--line);
-  padding:16px;
-  border-radius:12px;
-  display:flex;
-  flex-direction:column;
-}
-.card .logo{
-  height: 80px; 
-  width: 80px; 
-  object-fit: contain;
-  margin-bottom: 12px;
-  border-radius: 8px;
-  background: white;
-  padding: 8px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-.badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
-.pill{
-  background:var(--pill);
-  padding:.25rem .5rem;
-  border-radius:999px;
-  color:var(--muted);
-  font-size:.86rem;
-  border:1px solid var(--line);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-.proscons{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-  margin:8px 0;
-  flex:1;
-}
-.proscons ul{margin:0;padding-left:18px}
-.cta{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  align-items:center;
-  margin-top:auto;
-}
-.cta a {
-  flex: 1;
-}
-.btn-primary{
-  background:var(--primary);
-  color:#071024;
-  padding:.6rem .9rem;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:700
-}
-.btn-ghost{
-  background:transparent;
-  border:1px solid var(--line);
-  padding:.55rem .8rem;
-  border-radius:8px;
-  color:var(--muted);
-  text-decoration:none
-}
-.card-1xbet .logo {
-  background: #004d80;
-}
+    <section style="margin-top:28px;">
+      <h3 style="margin-bottom:12px;">熱門遊戲供應商推薦</h3>
+      <div class="slot-grid">
+        <article class="slot-card">
+          <img class="slot-thumb" src="images/le-bandit.png" alt="LE BANDIT">
+          <h3>LE BANDIT</h3>
+          <div class="meta">
+            <div><strong>供應商:</strong> Hacksaw Gaming</div>
+            <div><strong>RTP:</strong> 96.25% ｜ <strong>最大倍數:</strong> 10,000x</div>
+            <div style="margin-top:6px">高波動性、與知名串流主合作。這款遊戲以其高倍數潛力與獨特的「買特色」機制聞名，適合追求刺激的玩家。</div>
+          </div>
+          <a class="btn" href="https://stake.com/?c=qfX9sEvV" target="_blank" rel="nofollow sponsored noopener">前往遊玩</a>
+        </article>
 
-/* Responsive Compare Table */
-.table-wrap{
-  margin-top:20px;
-  overflow:auto;
-  border-radius:12px;
-  border:1px solid var(--line);
-  background:linear-gradient(180deg,rgba(255,255,255,0.01),transparent)
-}
-table{width:100%;border-collapse:collapse;min-width:760px}
-th,td{padding:12px 10px;text-align:left;border-bottom:1px dashed rgba(255,255,255,0.02)}
-th{
-  background:rgba(0,0,0,0.2);
-  position:sticky;
-  top:0;
-  font-weight:700;
-  cursor:pointer
-}
-tr:hover td{background:rgba(255,255,255,0.01)}
+        <article class="slot-card">
+          <img class="slot-thumb" src="images/ze-zeus.png" alt="ZE ZEUS">
+          <h3>ZE ZEUS</h3>
+          <div class="meta">
+            <div><strong>供應商:</strong> Hacksaw Gaming</div>
+            <div><strong>RTP:</strong> 96.26% ｜ <strong>最大倍數:</strong> 10,000x</div>
+            <div style="margin-top:6px">連線機制，搭配獨特符號與倍數，創造更多獎金機會。遊戲風格強烈，是 Hacksaw 的經典代表作。</div>
+          </div>
+          <a class="btn" href="https://stake.com/?c=qfX9sEvV" target="_blank" rel="nofollow sponsored noopener">前往遊玩</a>
+        </article>
 
-/* Tab styles */
-.tab-buttons {
-    display: flex;
-    gap: 10px;
-    margin-top: 15px;
-    margin-bottom: 20px;
-}
-.tab-button {
-    padding: 8px 16px;
-    border-radius: 8px;
-    background: var(--pill);
-    border: 1px solid var(--line);
-    color: var(--muted);
-    font-weight: 600;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.2s ease;
-}
-.tab-button:hover {
-    background-color: var(--line);
-}
-.tab-button.active {
-    background: var(--primary);
-    color: #071024;
-    border-color: var(--primary);
-}
-.hidden {
-  display: none;
-}
+        <article class="slot-card">
+          <img class="slot-thumb" src="images/le-king.png" alt="LE KING">
+          <h3>LE KING</h3>
+          <div class="meta">
+            <div><strong>供應商:</strong> Hacksaw Gaming</div>
+            <div><strong>RTP:</strong> 96.25% ｜ <strong>最大倍數:</strong> 10,000x</div>
+            <div style="margin-top:6px">高波動性老虎機，玩法簡單但獎金潛力巨大，是 LE 系列中不可錯過的遊戲。</div>
+          </div>
+          <a class="btn" href="https://stake.com/?c=qfX9sEvV" target="_blank" rel="nofollow sponsored noopener">前往遊玩</a>
+        </article>
+      </div>
+    </section>
 
-/* Scroll to top button */
-.scroll-to-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--primary);
-  color: #071024;
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  z-index: 10;
-}
-.scroll-to-top.show {
-  opacity: 1;
-  visibility: visible;
-}
+    <section style="margin-top:28px;">
+      <h3 style="margin-bottom:12px;">經典熱門老虎機</h3>
+      <div class="slot-grid">
+        <article class="slot-card">
+          <img class="slot-thumb" src="images/sweet-bonanza.png" alt="Sweet Bonanza">
+          <h3>Sweet Bonanza</h3>
+          <div class="meta">
+            <div><strong>供應商:</strong> Pragmatic Play</div>
+            <div><strong>RTP:</strong> 約 96.5% ｜ <strong>波動度:</strong> 中高</div>
+            <div style="margin-top:6px">糖果消除型、採用集群/連鎖機制，適合喜歡爆發玩法的玩家。</div>
+          </div>
+          <a class="btn" href="https://stake.com/?c=qfX9sEvV" target="_blank" rel="nofollow sponsored noopener">前往遊玩</a>
+        </article>
 
+        <article class="slot-card">
+          <img class="slot-thumb" src="images/gates-of-olympus.png" alt="Gates of Olympus">
+          <h3>Gates of Olympus</h3>
+          <div class="meta">
+            <div><strong>供應商:</strong> Pragmatic Play</div>
+            <div><strong>RTP:</strong> 約 96.5% ｜ <strong>波動度:</strong> 高</div>
+            <div style="margin-top:6px">神話主題、高波動、常見大型免費轉盤與乘數。</div>
+          </div>
+          <a class="btn" href="https://stake.com/?c=qfX9sEvV" target="_blank" rel="nofollow sponsored noopener">前往遊玩</a>
+        </article>
 
-/* Footer & Age Gate */
-footer{
-  margin-top:28px;
-  padding:18px 0;
-  text-align:center;
-  color:var(--muted);
-  font-size:.9rem;
-  border-top:1px solid rgba(255,255,255,0.02)
-}
-.agegate{
-  position:fixed;
-  inset:0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:rgba(0,0,0,0.66);
-  z-index:50
-}
-.agebox{
-  background:linear-gradient(180deg,#071827,#0f1f33);
-  padding:20px;
-  border-radius:12px;
-  border:1px solid var(--line);
-  width:92%;
-  max-width:520px;
-  text-align:center
-}
-.agebox p{color:var(--muted)}
-.age-actions{display:flex;gap:10px;justify-content:center;margin-top:12px}
+        <article class="slot-card">
+          <img class="slot-thumb" src="images/big-bass-bonanza.png" alt="Big Bass Bonanza">
+          <h3>Big Bass Bonanza</h3>
+          <div class="meta">
+            <div><strong>供應商:</strong> Pragmatic Play</div>
+            <div><strong>RTP:</strong> 約 96.7% ｜ <strong>波動度:</strong> 中</div>
+            <div style="margin-top:6px">釣魚主題，免費遊戲時釣魚獎金增加，適合中小額連續遊玩。</div>
+          </div>
+          <a class="btn" href="https://stake.com/?c=qfX9sEvV" target="_blank" rel="nofollow sponsored noopener">前往遊玩</a>
+        </article>
+        
+        <article class="slot-card">
+          <img class="slot-thumb" src="images/Stake_logo.svg" alt="Extra Slot">
+          <h3>更多熱門遊戲</h3>
+          <div class="meta" style="margin-bottom:10px">你可以在此加入更多推薦遊戲、影片截圖與玩家攻略。</div>
+          <a class="btn" href="index.html" target="_self">回到首頁（平台推薦）</a>
+        </article>
+      </div>
+    </section>
 
+    <footer>
+      © <span id="year"></span> MangoPlay ｜ 本頁僅供參考 · 18+ 合法地區
+    </footer>
+  </main>
 
-/* --- 教學頁面 (Guide Pages) 特定樣式 --- */
-.content-box {
-  max-width: 850px;
-  margin: 28px auto;
-  background: var(--card);
-  border: 1px solid var(--line);
-  padding: 30px;
-  border-radius: 12px;
-}
-.guide-step {
-  margin-bottom: 30px;
-  padding: 20px;
-  border-left: 4px solid var(--accent);
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 0 8px 8px 0;
-}
-.guide-step h3 {
-  color: var(--primary);
-  margin-top: 0;
-  display: flex;
-  align-items: center;
-}
-.step-number {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-right: 15px;
-    color: var(--accent);
-    border: 2px solid var(--accent);
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-}
+  <button id="scrollToTopBtn" class="scroll-to-top" aria-label="回到頂部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
 
-/* ****** 圖片優化：限制圖片寬度並居中 (解決手機圖片過大問題) ****** */
-.guide-step img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    margin-top: 15px;
-    border: 1px solid var(--line);
+  <script>
+    // set year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Language switch
+    const translations = {
+      zh: {
+        navHome: '首頁', navSlots: '🎰 老虎機', navGuide: '📖 教學專區', navCompare: '比較表',
+        heroTitle: '🎰 MangoPlay — 精選老虎機推薦',
+        heroSub: '每款卡片包含：遊戲類型、RTP（理論回饋率）、波動度說明與前往遊玩按鈕（連結會導到你選擇的平台）。請於合法地區且 18+ 使用。',
+      },
+      en: {
+        navHome: 'Home', navSlots: '🎰 Slots', navGuide: '📖 Guides', navCompare: 'Compare',
+        heroTitle: '🎰 MangoPlay — Top Slot Game Picks',
+        heroSub: 'Each card shows type, RTP (theoretical return), volatility and a play button (links open on provider). For reference only — use in legal jurisdictions aged 18+.',
+      }
+    };
+    function applyLang(l){
+      localStorage.setItem('mango_lang', l);
+      document.getElementById('nav-home').textContent = translations[l].navHome;
+      document.getElementById('nav-slots').textContent = translations[l].navSlots;
+      document.getElementById('nav-guide').textContent = translations[l].navGuide; // 修正：確保導航列有此 ID
+      document.getElementById('nav-compare').textContent = translations[l].navCompare; // 修正：確保導航列有此 ID
+      document.getElementById('title').textContent = translations[l].heroTitle;
+      document.getElementById('subtitle').textContent = translations[l].heroSub;
+    }
+    document.getElementById('lang-zh').addEventListener('click', ()=>applyLang('zh'));
+    document.getElementById('lang-en').addEventListener('click', ()=>applyLang('en'));
+    // init language
+    applyLang(localStorage.getItem('mango_lang') || 'zh');
     
-    /* 核心手機優化：限制圖片最大尺寸並居中 */
-    display: block; 
-    margin-left: auto;
-    margin-right: auto; 
-    max-width: 350px; 
-}
-/* ***************************************************************** */
+    // Scroll to top button logic
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    });
 
-/* 教學專區卡片樣式 (guide.html) */
-.guide-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-.guide-card {
-    background: var(--card);
-    border: 1px solid var(--line);
-    padding: 20px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-}
-.guide-icon {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-.btn-guide {
-    background: var(--primary);
-    color: #071024;
-    padding: 10px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 700;
-    margin-top: auto;
-    display: block;
-    text-align: center;
-}
-
-/* --- SLOT 頁面特定樣式 (新增或修正) --- */
-.slot-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:16px;
-    margin-top:18px;
-}
-.slot-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    padding:12px;
-    border-radius:12px;
-    display:flex;
-    flex-direction:column;
-    min-height:300px;
-}
-.slot-thumb{
-    width:100%;
-    height:140px;
-    object-fit:contain; /* 讓圖片完整顯示 */
-    border-radius:10px;
-    border:1px solid rgba(255,255,255,0.03);
-    margin-bottom:8px;
-    background-color: #0b1220;
-}
-.slot-card h3{margin:0 0 .4rem}
-.meta{color:var(--muted);font-size:.92rem;flex:1;margin-bottom:12px}
-
-/* 使用 .btn class (在 slot.html 中是這樣命名) */
-.slot-card .btn{
-    background:var(--primary);
-    color:#021024;
-    padding:.6rem .9rem;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:700;
-    margin-top:auto;
-    display:inline-block;
-    text-align:center;
-}
-
-
-/* --- Media Queries (響應式設計) --- */
-@media (max-width:880px){
-  .proscons{grid-template-columns:1fr}
-}
-
-@media screen and (max-width: 768px) {
-    /* 調整頁首導覽列 */
-    .header-inner {
-        padding: 8px 15px; 
-    }
-
-    /* 調整主視覺區塊的文字大小與間距 */
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-    .hero p {
-        font-size: 0.9rem;
-    }
-
-    /* 確保所有 .wrap 容器在小螢幕上都有左右間距 */
-    .wrap {
-        padding: 0 15px;
-    }
-
-    /* 讓平台卡片在手機上垂直排列 */
-    .cards {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-    .guide-grid {
-        display: flex; /* 教學頁面卡片也改為垂直排列 */
-        flex-direction: column;
-    }
-    /* 確保 SLOT 卡片在手機上也垂直排列 */
-    .slot-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 20px; /* 增加間距與其他卡片一致 */
-    }
-
-
-    /* 讓卡片本身在手機上撐滿整個寬度 */
-    .card, .slot-card, .guide-card { /* 確保所有卡片都撐滿 */
-        width: 100%;
-    }
-
-    /* 讓按鈕在手機上可以垂直排列 */
-    .cta {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .cta a {
-        width: 100%;
-        text-align: center;
-    }
-    
-    /* 修正 Logo 顯示問題 */
-    .logo-circle {
-        width: 40px;
-        height: 40px;
-    }
-    .brand h1 {
-        font-size: 0.9rem;
-    }
-    nav a {
-        padding: 0.4rem 0.5rem;
-        font-size: 0.85rem;
-    }
-}
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>
