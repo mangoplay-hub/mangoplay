@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>MangoPlay | 📖 教學專區：新手快速上手指南</title>
 
-<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="icon" href="images/favicon.png"> 
 <link rel="apple-touch-icon" href="images/favicon.png">
 
   <meta name="google-site-verification" content="6oH3VpKvJ0s3hi4J4I4TyZv7vtKix5rCxuGFclNjQmg" />
@@ -41,7 +41,8 @@
         <a href="index.html" id="nav-home">首頁</a>
         <a href="slots.html" id="nav-slots">🎰 老虎機</a>
         <a href="guide.html" id="nav-guide" class="active">📖 教學專區</a>
-        <a href="index.html#compare" id="nav-compare">比較表</a> <div class="lang-switch" style="margin-left:8px">
+        <a href="index.html#compare" id="nav-compare">比較表</a> 
+        <div class="lang-switch" style="margin-left:8px">
           <button id="lang-zh">中文</button>
           <button id="lang-en">EN</button>
         </div>
@@ -62,14 +63,14 @@
                 <div class="guide-icon">💎</div>
                 <h3>Stake 平台入金與出金</h3>
                 <p>手把手教學：如何從 BitoPro 交易所，將新台幣安全、快速地存入 Stake 平台，並成功提領回銀行。</p>
-                <a class="btn-guide" href="#" style="background:#555; color:#CCC;">敬請期待 (即將推出)</a> 
+                <a class="btn-guide btn-ghost" href="#">敬請期待 (即將推出)</a> 
             </article>
 
             <article class="guide-card">
                 <div class="guide-icon">🏦</div>
                 <h3>MAX 交易所入金攻略</h3>
                 <p>台灣另一大交易所 MAX 的入金與 USDT 購買流程。提供您多一種加密貨幣資金轉帳的選擇。</p>
-                <a class="btn-guide" href="#" style="background:#555; color:#CCC;">敬請期待 (即將推出)</a>
+                <a class="btn-guide btn-ghost" href="#">敬請期待 (即將推出)</a>
             </article>
 
             <article class="guide-card">
@@ -83,7 +84,7 @@
                 <div class="guide-icon">❓</div>
                 <h3>區塊鏈錢包基礎教學</h3>
                 <p>Web3 新手入門必看：錢包安全、助記詞備份、基本操作與常見詐騙預防知識。</p>
-                <a class="btn-guide" href="#" style="background:#555; color:#CCC;">敬請期待</a>
+                <a class="btn-guide btn-ghost" href="#">敬請期待</a>
             </article>
 
         </div>
@@ -104,7 +105,7 @@
     // set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Language switch (補齊 slots.html 提供的完整邏輯)
+    // Language switch 
     const translations = {
       zh: {
         navHome: '首頁', navSlots: '🎰 老虎機', navGuide: '📖 教學專區', navCompare: '比較表',
@@ -122,7 +123,10 @@
       document.getElementById('nav-home').textContent = translations[l].navHome;
       document.getElementById('nav-slots').textContent = translations[l].navSlots;
       document.getElementById('nav-guide').textContent = translations[l].navGuide;
+      // 確保只有在首頁才連結到 #compare
+      document.getElementById('nav-compare').setAttribute('href', l === 'zh' ? 'index.html#compare' : 'index.html#compare');
       document.getElementById('nav-compare').textContent = translations[l].navCompare;
+      
       document.getElementById('title').textContent = translations[l].heroTitle;
       document.getElementById('subtitle').textContent = translations[l].heroSub;
     }
