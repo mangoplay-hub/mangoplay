@@ -3,7 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>教學專區📖｜Stake, BitoPro, MAX 交易所新手教學、APP 下載指南</title>
+  <title>MangoPlay | 📖 教學專區：新手快速上手指南</title>
+
+  <link rel="icon" type="image/png" href="favicon.png"> 
+  <link rel="apple-touch-icon" href="favicon.png"> 
 
   <meta name="google-site-verification" content="6oH3VpKvJ0s3hi4J4I4TyZv7vtKix5rCxuGFclNjQmg" />
 
@@ -20,64 +23,12 @@
   
   <link rel="stylesheet" href="style.css"> 
   
-  <style>
-    /* 確保樣式與 slot-grid 一致，但用於教學卡片 */
-    .guide-grid{
-        display:grid;
-        grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-        gap:20px;
-        margin-top:30px;
-    }
-    .guide-card{
-        background:var(--card);
-        border:1px solid var(--line);
-        padding:20px;
-        border-radius:12px;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
-        min-height:220px;
-        transition:transform 0.2s;
-    }
-    .guide-card:hover{
-        border-color:var(--primary);
-        transform:translateY(-3px);
-    }
-    .guide-icon{
-        font-size: 3rem;
-        margin-bottom: 15px;
-        color: var(--accent);
-    }
-    .guide-card h3{margin:0 0 10px; font-size: 1.4rem;}
-    .guide-card p{color:var(--muted); font-size: 0.95rem; flex:1;}
-
-    .btn-guide{
-        background:var(--primary);
-        color:#021024;
-        padding:.6rem .9rem;
-        border-radius:8px;
-        text-decoration:none;
-        font-weight:700;
-        margin-top:auto;
-        display:inline-block;
-        text-align:center;
-    }
-    footer {
-        margin-top: 28px;
-        padding: 18px 0;
-        text-align: center;
-        color: var(--muted);
-        font-size: .9rem;
-        border-top: 1px solid rgba(255, 255, 255, 0.02);
-    }
-  </style>
 </head>
 <body>
   
   <header>
     <div class="header-inner">
-      <div class="brand">
+      <a href="index.html" class="brand" style="text-decoration: none; color: inherit;">
         <div class="logo-circle">
           <img class="logo" src="images/MangoPlay_Logo.png" alt="MangoPlay logo">
         </div>
@@ -85,13 +36,12 @@
           <h1>MangoPlay</h1>
           <div style="color:var(--muted);font-size:.85rem;margin-top:-8px;">合規比較 · 合法地區 18+</div>
         </div>
-      </div>
+      </a>
       <nav>
         <a href="index.html" id="nav-home">首頁</a>
         <a href="slots.html" id="nav-slots">🎰 老虎機</a>
-        <a href="guide.html" id="nav-guide" style="background:var(--card);color:var(--primary);">📖 教學專區</a>
-        <a href="#compare" id="nav-compare">比較表</a>
-        <div class="lang-switch" style="margin-left:8px">
+        <a href="guide.html" id="nav-guide" class="active">📖 教學專區</a>
+        <a href="index.html#compare" id="nav-compare">比較表</a> <div class="lang-switch" style="margin-left:8px">
           <button id="lang-zh">中文</button>
           <button id="lang-en">EN</button>
         </div>
@@ -143,10 +93,60 @@
       © <span id="year"></span> MangoPlay ｜ 本頁僅供參考 · 18+ 合法地區
     </footer>
   </main>
+  
+  <button id="scrollToTopBtn" class="scroll-to-top" aria-label="回到頂部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
 
   <script>
+    // set year
     document.getElementById('year').textContent = new Date().getFullYear();
-    // 您的 Language switch 邏輯和 Scroll to top 邏輯
+
+    // Language switch (補齊 slots.html 提供的完整邏輯)
+    const translations = {
+      zh: {
+        navHome: '首頁', navSlots: '🎰 老虎機', navGuide: '📖 教學專區', navCompare: '比較表',
+        heroTitle: '📖 教學專區：新手快速上手指南',
+        heroSub: '從新台幣入金到平台操作，我們提供最詳細、最適合台灣玩家的圖文影音教學，助您快速開始遊戲。',
+      },
+      en: {
+        navHome: 'Home', navSlots: '🎰 Slots', navGuide: '📖 Guides', navCompare: 'Compare',
+        heroTitle: '📖 Guides: Quick Start Tutorials for New Players',
+        heroSub: 'From TWD deposits to platform operation, we provide detailed tutorials in text, graphics, and video to help Taiwanese players get started quickly.',
+      }
+    };
+    function applyLang(l){
+      localStorage.setItem('mango_lang', l);
+      document.getElementById('nav-home').textContent = translations[l].navHome;
+      document.getElementById('nav-slots').textContent = translations[l].navSlots;
+      document.getElementById('nav-guide').textContent = translations[l].navGuide;
+      document.getElementById('nav-compare').textContent = translations[l].navCompare;
+      document.getElementById('title').textContent = translations[l].heroTitle;
+      document.getElementById('subtitle').textContent = translations[l].heroSub;
+    }
+    document.getElementById('lang-zh').addEventListener('click', ()=>applyLang('zh'));
+    document.getElementById('lang-en').addEventListener('click', ()=>applyLang('en'));
+    // init language
+    applyLang(localStorage.getItem('mango_lang') || 'zh');
+    
+    // Scroll to top button logic
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add('show');
+      } else {
+        scrollToTopBtn.classList.remove('show');
+      }
+    });
+
+    scrollToTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
   </script>
 </body>
 </html>
